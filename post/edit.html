@@ -10,5 +10,46 @@
     ></script>
     <title>HotView Labs | Edit</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <!-- Copy from home page -->
+    </header>
+    <main>
+      <section>
+        <h1>Edit article</h1>
+        <form action="">
+          <label for="title-input">title</label>
+          <input
+            type="text"
+            name="title-input"
+            id="title-input"
+            title="Change the article title"
+          />
+          <label for="url-input">image url</label>
+          <input
+            type="url"
+            name="url-input"
+            id="url-input"
+            placeholder="https://example.com"
+            pattern="https://.*"
+            title="Change the image url"
+          />
+          <label for="content-input">content</label>
+          <textarea
+            name="content-input"
+            id="content-input"
+            title="Change article content"
+          ></textarea>
+          <div>
+            <input type="submit" value="save" title="Click to save changes" />
+            <button title="Click to delete article">delete</button>
+            <!-- Add JS - onclick function deletes article -->
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <!-- Copy from home page -->
+    </footer>
+  </body>
 </html>
