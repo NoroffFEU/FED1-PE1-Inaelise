@@ -1,0 +1,45 @@
+footer {
+  padding-top: 1rem;
+}
+
+footer ul {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+}
+
+.divider {
+  color: var(--blue);
+}
+
+.docs-ul {
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.socials {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: var(--xxs);
+}

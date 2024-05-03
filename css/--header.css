@@ -1,0 +1,27 @@
+header {
+  background-color: var(--black);
+  min-height: 80px;
+}
+
+header img {
+  width: 50%;
+}
+
+.header-logo {
+  text-align: center;
+}
+
+header ul {
+  background-color: var(--dark-blue);
+  display: flex;
+  gap: 1.8rem;
+  padding: 1.5rem;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.menu-btn {
+  color: var(--white);
+  border: none;
+  background-color: var(--dark-blue);
+}
