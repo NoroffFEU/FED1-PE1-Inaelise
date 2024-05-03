@@ -1,7 +1,40 @@
 @import url(-variables.css);
+@import url(--header.css);
+@import url(--footer.css);
+
+@import url(--media.css);
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--dark-blue);
+  min-height: 100vh;
+  margin: 0;
+  display: block;
+  font-family: var(--roboto);
+  color: var(--white);
+}
+
+header,
+footer {
+  background-color: var(--black);
+}
+
+header ul,
+footer ul {
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: var(--med);
+  font-size: var(--xs);
+}
+
+header a,
+footer a {
+  text-decoration: none;
+  color: inherit;
 }
