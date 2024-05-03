@@ -1,0 +1,25 @@
+:root {
+  /* Colors */
+  --black: #000000;
+  --dark-blue: #18181f;
+  --white: #ffffff;
+  --grey: #d9d9d9;
+  --blue: #1717af;
+
+  /* Font size */
+  --xl: 5.3rem;
+  --l: 3.3rem;
+  --m: 2rem;
+  --s: 1.6rem;
+  --xs: 1.3rem;
+  --xxs: 1.1rem;
+
+  /* Font weight */
+  --bolder: 900;
+  --bold: 700;
+  --med: 500;
+
+  /* Font family */
+  --roboto: "Roboto", sans-serif;
+  --source: "Source Sans 3", sans-serif;
+}
