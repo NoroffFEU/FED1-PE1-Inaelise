@@ -1,6 +1,8 @@
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
 
+dropdownMenu.classList.remove("visible");
+
 function toggleDropdown() {
   dropdownMenu.classList.toggle("visible");
 }
