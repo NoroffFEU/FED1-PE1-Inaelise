@@ -31,37 +31,39 @@
       </section>
       <section class="header-nav">
         <ul>
-          <li><a href="./index.html" title="" aria-label="">feed</a></li>
+          <li class="nav-link">
+            <a href="./index.html" title="" aria-label="">feed</a>
+          </li>
           <li>/</li>
-          <li>
+          <li class="nav-link">
             <a href="./account/login.html" title="" aria-label="">login</a>
           </li>
           <li>/</li>
           <li>
             <!-- Add JS to open/close dropdown menu -->
             <button
-              class="menu-btn"
+              class="menu-btn nav-link"
               id="menu-btn"
               title="Click to open menu"
               aria-label=""
             >
-              <i class="fa-solid fa-plus fa-lg"></i>
+              <i class="fa-solid fa-plus plus-icon"></i>
             </button>
             <!-- Hidden initially -->
             <div class="dropdown visible" id="dropdown">
               <ul>
-                <li>
+                <li class="nav-link">
                   <a href="#" title="" aria-label="">about</a>
                 </li>
-                <li>
+                <li class="nav-link">
                   <a href="./account/register.html" title="" aria-label=""
                     >register</a
                   >
                 </li>
-                <li>
+                <li class="nav-link">
                   <a href="#" title="" aria-label="">terms & conditions</a>
                 </li>
-                <li>
+                <li class="nav-link">
                   <a href="#" title="" aria-label="">privacy policy</a>
                 </li>
               </ul>
@@ -83,31 +85,73 @@
       <section>
         <div class="links">
           <ul>
-            <li>feed</li>
+            <li class="nav-link">
+              <a
+                href="./index.html"
+                title="Go to feed"
+                aria-label="Link to feed"
+                >feed</a
+              >
+            </li>
             <li class="divider">/</li>
-            <li>login</li>
+            <li class="nav-link">
+              <a
+                href="./account/login.html"
+                title="Go to login page"
+                aria-label="Link to login page"
+                >login</a
+              >
+            </li>
             <li class="divider-alt">/</li>
           </ul>
           <ul>
-            <li>about</li>
+            <li class="nav-link">
+              <a
+                href="#"
+                title="Go to about page"
+                aria-label="Link to about page"
+                >about</a
+              >
+            </li>
             <li class="divider">/</li>
-            <li>register</li>
+            <li class="nav-link">
+              <a
+                href="./account/register.html"
+                title="Go to register page"
+                aria-label="Link to register page"
+                >register</a
+              >
+            </li>
           </ul>
         </div>
         <ul class="docs-ul">
-          <li>terms & conditions</li>
+          <li class="nav-link">
+            <a
+              href="#"
+              title="Go to terms & conditions"
+              aria-label="Link to terms & conditions"
+              >terms & conditions</a
+            >
+          </li>
           <li class="divider-alt">/</li>
-          <li>privacy policy</li>
+          <li class="nav-link">
+            <a
+              href="#"
+              title="Go to privacy policy"
+              aria-label="Link to privacy policy"
+              >privacy policy</a
+            >
+          </li>
         </ul>
       </section>
       <section>
         <ul class="socials">
-          <li>
+          <li class="nav-link">
             <a title="Link to Facebook" href="#">
               <i aria-label="icon" class="fa-brands fa-facebook-f fa-xl"></i>
             </a>
           </li>
-          <li>
+          <li class="nav-link">
             <a title="Link to Twitter" href="#">
               <i aria-label="icon" class="fa-brands fa-x-twitter fa-xl"></i>
             </a>

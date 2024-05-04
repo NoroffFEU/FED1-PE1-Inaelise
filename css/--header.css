@@ -30,7 +30,7 @@ header ul {
 .dropdown {
   position: absolute;
   width: 280px;
-  top: 10%;
+  top: 80px;
   right: 0;
   transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
   transform: translateY(0.5rem);
@@ -50,4 +50,16 @@ header ul {
   transform: translateY(0rem);
   visibility: visible;
   opacity: 1;
+}
+
+.nav-link {
+  transition: transform 0.2s;
+}
+
+.nav-link:hover {
+  transform: scale(1.2);
+}
+
+.plus-icon {
+  font-size: var(--xs);
 }
