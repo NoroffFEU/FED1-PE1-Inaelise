@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/92238a2726.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src=""></script>
     <title>HotView Labs | Register</title>
   </head>
   <body>
@@ -30,7 +31,7 @@
           aria-label=""
           >Login here!</a
         >
-        <form action="">
+        <form class="register-form" method="post">
           <label for="username-input">username</label>
           <input
             type="text"
@@ -38,6 +39,15 @@
             id="username-input"
             placeholder="Enter username"
             title="Enter a username"
+          />
+          <label for="avatar-input">Upload avatar</label>
+          <input
+            type="url"
+            name="avatar-input"
+            id="avatar-input"
+            placeholder="https://example.com"
+            pattern="https://.*"
+            title="Add an avatar"
           />
           <label for="email-input">email</label>
           <input
@@ -55,7 +65,12 @@
             placeholder="******"
             title="Enter a password"
           />
-          <input type="submit" value="register" title="Register account" />
+          <input
+            type="submit"
+            id="register-btn"
+            value="register"
+            title="Register account"
+          />
           <!-- Add JS - onclick function -->
         </form>
       </section>
