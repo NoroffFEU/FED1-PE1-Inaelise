@@ -10,8 +10,13 @@ footer ul {
   padding: 0.8rem;
 }
 
-.divider {
+.divider,
+.divider-alt {
   color: var(--blue);
+}
+
+.divider-alt {
+  display: none;
 }
 
 .docs-ul {

@@ -2,6 +2,30 @@
 }
 
 @media screen and (min-width: 48.1em) {
+  /* Header */
+  header ul {
+    gap: 3rem;
+  }
+
+  /* Footer */
+  footer ul {
+    gap: 4rem;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .divider-alt {
+    display: block;
+  }
+
+  .docs-ul {
+    flex-direction: row;
+    gap: 4rem;
+  }
 }
 
 @media screen and (min-width: 64em) {
