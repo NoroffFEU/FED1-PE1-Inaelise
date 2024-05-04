@@ -10,20 +10,71 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../css/index.css" />
     <script
       src="https://kit.fontawesome.com/92238a2726.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="../js/index.mjs"></script>
     <title>HotView Labs | Edit</title>
   </head>
   <body>
     <header>
-      <!-- Copy from home page -->
+      <section class="header-logo">
+        <a
+          href="../index.html"
+          title="Go to home page"
+          aria-label="Link to home page"
+        >
+          <img src="../images/Logo.png" alt="HotView Labs logo" />
+        </a>
+      </section>
+      <section class="header-nav">
+        <ul>
+          <li class="nav-link">
+            <a href="../index.html" title="" aria-label="">feed</a>
+          </li>
+          <li>/</li>
+          <li class="nav-link">
+            <a href="../account/login.html" title="" aria-label="">login</a>
+          </li>
+          <li>/</li>
+          <li>
+            <button
+              class="menu-btn nav-link"
+              id="menu-btn"
+              title="Click to open menu"
+              aria-label=""
+            >
+              <i class="fa-solid fa-plus plus-icon"></i>
+            </button>
+            <!-- Hidden initially -->
+            <div class="dropdown visible" id="dropdown">
+              <ul>
+                <li class="nav-link">
+                  <a href="#" title="" aria-label="">about</a>
+                </li>
+                <li class="nav-link">
+                  <a href="../account/register.html" title="" aria-label=""
+                    >register</a
+                  >
+                </li>
+                <li class="nav-link">
+                  <a href="#" title="" aria-label="">terms & conditions</a>
+                </li>
+                <li class="nav-link">
+                  <a href="#" title="" aria-label="">privacy policy</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </section>
     </header>
     <main>
-      <section>
+      <section class="edit-post">
         <h1>Edit article</h1>
-        <form action="">
+        <form>
           <label for="title-input">title</label>
           <input
             type="text"
@@ -55,7 +106,86 @@
       </section>
     </main>
     <footer>
-      <!-- Copy from home page -->
+      <section>
+        <div class="links">
+          <ul>
+            <li class="nav-link">
+              <a
+                href="../index.html"
+                title="Go to feed"
+                aria-label="Link to feed"
+                >feed</a
+              >
+            </li>
+            <li class="divider">/</li>
+            <li class="nav-link">
+              <a
+                href="../account/login.html"
+                title="Go to login page"
+                aria-label="Link to login page"
+                >login</a
+              >
+            </li>
+            <li class="divider-alt">/</li>
+          </ul>
+          <ul>
+            <li class="nav-link">
+              <a
+                href="#"
+                title="Go to about page"
+                aria-label="Link to about page"
+                >about</a
+              >
+            </li>
+            <li class="divider">/</li>
+            <li class="nav-link">
+              <a
+                href="../account/register.html"
+                title="Go to register page"
+                aria-label="Link to register page"
+                >register</a
+              >
+            </li>
+          </ul>
+        </div>
+        <ul class="docs-ul">
+          <li class="nav-link">
+            <a
+              href="#"
+              title="Go to terms & conditions"
+              aria-label="Link to terms & conditions"
+              >terms & conditions</a
+            >
+          </li>
+          <li class="divider-alt">/</li>
+          <li class="nav-link">
+            <a
+              href="#"
+              title="Go to privacy policy"
+              aria-label="Link to privacy policy"
+              >privacy policy</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <ul class="socials">
+          <li class="nav-link">
+            <a title="Link to Facebook" href="#">
+              <i aria-label="icon" class="fa-brands fa-facebook-f fa-xl"></i>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a title="Link to Twitter" href="#">
+              <i aria-label="icon" class="fa-brands fa-x-twitter fa-xl"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="copyright">
+          <i class="fa-regular fa-copyright"></i>
+          <p>2024 HotView Labs</p>
+        </div>
+      </section>
     </footer>
   </body>
 </html>
