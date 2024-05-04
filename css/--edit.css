@@ -1,0 +1,63 @@
+.edit-post h1 {
+  text-transform: uppercase;
+  font-family: var(--source);
+  font-size: var(--m);
+  font-weight: 900;
+  text-align: center;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--xxs);
+}
+
+.edit-form label {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.edit-form input {
+  margin-bottom: 1.5rem;
+  height: 30px;
+  width: 250px;
+}
+
+.edit-form input,
+.edit-form textarea,
+.delete-btn {
+  border-radius: 6px;
+  border: none;
+}
+
+.edit-form textarea {
+  height: 200px;
+  width: 280px;
+}
+
+input[type="submit"],
+.delete-btn {
+  width: 100px;
+  height: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.form-btns {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.save-btn {
+  background-color: #67d94b;
+  color: var(--dark-blue);
+}
+
+.delete-btn {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: 2px solid var(--white);
+}

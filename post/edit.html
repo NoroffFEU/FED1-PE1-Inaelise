@@ -74,7 +74,7 @@
     <main>
       <section class="edit-post">
         <h1>Edit article</h1>
-        <form>
+        <form class="edit-form">
           <label for="title-input">title</label>
           <input
             type="text"
@@ -97,9 +97,16 @@
             id="content-input"
             title="Change article content"
           ></textarea>
-          <div>
-            <input type="submit" value="save" title="Click to save changes" />
-            <button title="Click to delete article">delete</button>
+          <div class="form-btns">
+            <input
+              class="save-btn"
+              type="submit"
+              value="save"
+              title="Click to save changes"
+            />
+            <button class="delete-btn" title="Click to delete article">
+              delete
+            </button>
             <!-- Add JS - onclick function deletes article -->
           </div>
         </form>
