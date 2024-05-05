@@ -1,11 +1,3 @@
-.edit-post h1 {
-  text-transform: uppercase;
-  font-family: var(--source);
-  font-size: var(--m);
-  font-weight: 900;
-  text-align: center;
-}
-
 .edit-form {
   display: flex;
   flex-direction: column;

@@ -1,7 +1,8 @@
 @import url(-variables.css);
-@import url(--header.css);
-@import url(--footer.css);
-@import url(--edit.css);
+@import url(-header.css);
+@import url(-footer.css);
+@import url(-edit.css);
+@import url(-register.css);
 
 @import url(--media.css);
 
@@ -38,4 +39,12 @@ header a,
 footer a {
   text-decoration: none;
   color: inherit;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: var(--source);
+  font-size: var(--m);
+  font-weight: 900;
+  text-align: center;
 }
