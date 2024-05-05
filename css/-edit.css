@@ -17,7 +17,7 @@
   width: 280px;
 }
 
-input[type="submit"],
+.edit-form input[type="submit"],
 .delete-btn {
   width: 100px;
   height: 40px;
@@ -34,10 +34,16 @@ input[type="submit"],
 .save-btn {
   background-color: #67d94b;
   color: var(--dark-blue);
+  transition: transform 0.2s;
 }
 
 .delete-btn {
   background-color: var(--dark-blue);
   color: var(--white);
   border: 2px solid var(--white);
+  transition: transform 0.2s;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
 }
