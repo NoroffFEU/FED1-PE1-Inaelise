@@ -6,18 +6,6 @@
   font-size: var(--xxs);
 }
 
-.edit-form label {
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-.edit-form input {
-  margin-bottom: 1.5rem;
-  height: 30px;
-  width: 250px;
-}
-
-.edit-form input,
 .edit-form textarea,
 .delete-btn {
   border-radius: 6px;
@@ -52,9 +40,4 @@ input[type="submit"],
   background-color: var(--dark-blue);
   color: var(--white);
   border: 2px solid var(--white);
-}
-
-.edit-post a {
-  text-decoration: none;
-  color: inherit;
 }

@@ -35,8 +35,7 @@ footer ul {
   font-size: var(--xs);
 }
 
-header a,
-footer a {
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -47,4 +46,18 @@ h1 {
   font-size: var(--m);
   font-weight: 900;
   text-align: center;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+input {
+  margin-bottom: 1.5rem;
+  height: 30px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+  padding-left: 0.6rem;
 }
