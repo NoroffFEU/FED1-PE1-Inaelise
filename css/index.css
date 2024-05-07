@@ -67,3 +67,13 @@ input[type="submit"]:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
+
+#greeting {
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  padding: 0.3rem;
+  display: none;
+}

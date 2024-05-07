@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/92238a2726.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="../js/index.mjs"></script>
+    <script type="module" src="../js/login.mjs"></script>
     <title>HotView Labs | Login</title>
   </head>
   <body>
@@ -28,6 +28,7 @@
         >
           <img src="../images/Logo.png" alt="HotView Labs logo" />
         </a>
+        <p id="greeting"></p>
       </section>
       <section class="header-nav">
         <ul>
@@ -98,7 +99,13 @@
             placeholder="******"
             title="Enter your password"
           />
-          <input type="submit" value="login" title="Login to your account" />
+          <input
+            type="submit"
+            name="login-submit"
+            id="login-submit"
+            value="login"
+            title="Login to your account"
+          />
           <!-- Add JS - onclick function -->
         </form>
       </section>
