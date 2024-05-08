@@ -1,5 +1,6 @@
 import { API_BASE_URL } from "./utils/api.mjs";
 
+//Dropdown menu
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
 
@@ -20,6 +21,7 @@ document.documentElement.addEventListener("click", (e) => {
   }
 });
 
+//Login form
 const loginForm = {
   email: document.getElementById("email-input"),
   password: document.getElementById("password-input"),
@@ -34,7 +36,7 @@ loginForm.submit.addEventListener("click", (e) => {
 
 async function loginUser(url) {
   try {
-    const post = {
+    const loginData = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +46,7 @@ async function loginUser(url) {
         password: loginForm.password.value,
       }),
     };
-    const res = await fetch(url, post);
+    const res = await fetch(url, loginData);
     const json = await res.json();
     console.log(json);
     if (json.errors) {
@@ -56,7 +58,6 @@ async function loginUser(url) {
     localStorage.setItem("accessToken", accessToken);
     const user = json.data.name;
     localStorage.setItem("user", user);
-    window.location.reload();
   } catch (error) {
     console.log(error);
   }
