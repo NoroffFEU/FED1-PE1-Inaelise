@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "./utils/api.mjs";
+
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
 
@@ -18,82 +20,13 @@ document.documentElement.addEventListener("click", (e) => {
   }
 });
 
-// Register function
-const API_BASE_URL = "https://v2.api.noroff.dev/";
-
-async function registerUser(url, userData) {
-  console.log(url, userData);
-  try {
-    const postData = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    };
-    const res = await fetch(url, postData);
-    console.log(res);
-    const json = await res.json();
-    console.log(json);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-const userToRegister = {
-  name: "OlaNordmann",
-  email: "Ola.Nordmann@stud.noroff.no",
-  password: "12345678",
-  avatar: {
-    url: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Avatar image of author",
-  },
-};
-
-const registerUrl = `${API_BASE_URL}auth/register`;
-
-/* registerUser(registerUrl, userToRegister); */
-
-// Login function
-async function loginUser(url, userData) {
-  try {
-    const postData = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    };
-    const res = await fetch(url, postData);
-    const json = await res.json();
-    console.log(json);
-    const accessToken = json.data.accessToken;
-    localStorage.setItem("accessToken", accessToken);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-const userToLogin = {
-  email: "Ola.Nordmann@stud.noroff.no",
-  password: "12345678",
-};
-
-const loginUrl = `${API_BASE_URL}auth/login`;
-
-/* loginUser(loginUrl, userToLogin); */
-
 //Access token and gets blog posts function
-async function getToken(url) {
+/* async function displayPosts(url) {
   try {
-    /* console.log(url); */
-    const token = localStorage.getItem("accessToken");
-    /* console.log(token); */
     const getOptions = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       },
     };
     const res = await fetch(url, getOptions);
@@ -103,11 +36,84 @@ async function getToken(url) {
   } catch (error) {
     console.log(error);
   }
+} */
+
+/* function renderPostHtml(post) {
+  const blogPost = document.createElement("a");
+  blogPost.href = "./post/index.html?id=" + post.id;
+  blogPost.title = "Click to view article";
+  blogPost.classList.add("article-list");
+
+  const postImage = document.createElement("img");
+  postImage.src = post.image.url;
+
+  const postTitle = document.createElement("h3");
+  postTitle.textContent = post.title;
+
+  blogPost.append(postImage, postTitle);
+
+  return blogPost;
 }
+ */
+/* function displayPosts(posts) {
+  const displayContainer = document.getElementById("display-container");
+  displayContainer.textContent = "";
+
+  posts.forEach((post) => {
+    const postHtml = renderPostHtml(post);
+    displayContainer.appendChild(postHtml);
+  });
+}
+
+async function renderPage() {
+  try {
+    const res = await fetch(postsUrl);
+    const json = await res.json();
+    const posts = json.data;
+    console.log(posts);
+    displayPosts(posts);
+  } catch (error) {
+    alert("Error fetching posts", error);
+  }
+} */
+
+/* renderPage(); */
 
 const postsUrl = `${API_BASE_URL}blog/posts/OlaNordmann`;
 
-getToken(postsUrl);
+async function getPosts() {
+  const res = await fetch(postsUrl);
+  const json = await res.json();
+  const posts = json.data;
+  console.log(posts);
+
+  return posts;
+}
+
+function renderPostHtml(post) {
+  const displayContainer = document.getElementById("display-container");
+  const blogPost = document.createElement("a");
+  blogPost.href = "./post/index.html?id=" + post.id;
+  blogPost.title = "Click to view article";
+  blogPost.classList.add("article-list");
+
+  /* const postImage = document.createElement("img");
+  postImage.src = post.image.url; */
+
+  const postTitle = document.createElement("h3");
+  postTitle.textContent = post.title;
+
+  displayContainer.append(blogPost);
+  blogPost.append(postTitle);
+}
+
+async function renderPosts() {
+  const posts = await getPosts();
+
+  posts.forEach((post) => renderPostHtml(post));
+}
+
+renderPosts();
 
 //Create blog posts
 async function createPosts(url, userData) {
