@@ -86,15 +86,16 @@
             id="username-input"
             placeholder="Enter username"
             title="Enter a username"
+            required
+            pattern="^[\w]+$"
           />
           <label for="avatar-input">Upload avatar</label>
           <input
             type="url"
             name="avatar-input"
             id="avatar-input"
-            placeholder="https://example.com"
             pattern="https://.*"
-            title="Add an avatar"
+            title="Add an image url"
           />
           <label for="email-input">email</label>
           <input
@@ -103,6 +104,8 @@
             id="email-input"
             placeholder="noroff@outlook.com"
             title="Enter your email"
+            required
+            pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
           />
           <label for="password-input">password</label>
           <input
@@ -111,6 +114,8 @@
             id="password-input"
             placeholder="******"
             title="Enter a password"
+            required
+            minlength="8"
           />
           <input
             type="submit"
