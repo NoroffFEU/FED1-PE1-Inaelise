@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "./utils/api.mjs";
+import * as storage from "./utils/localStorage.mjs";
 
 //Dropdown menu
 const menuBtn = document.getElementById("menu-btn");
@@ -55,9 +56,10 @@ async function loginUser(url) {
       alert("You're logged in!");
     }
     const accessToken = json.data.accessToken;
-    localStorage.setItem("accessToken", accessToken);
-    const user = json.data.name;
+    storage.saveToStorage("accessToken", accessToken);
+    const user = json.data;
     localStorage.setItem("user", user);
+    storage.saveToStorage("user", user);
   } catch (error) {
     console.log(error);
   }
