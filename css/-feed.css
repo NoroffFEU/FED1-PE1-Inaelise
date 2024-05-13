@@ -1,0 +1,30 @@
+#display-container {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  gap: 5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.article-link {
+  display: flex;
+  background-color: var(--grey);
+  color: var(--black);
+  height: 200px;
+  width: 500px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.article-link:hover {
+  box-shadow: 5px 5px var(--blue);
+  animation-duration: 0.35s;
+}
+
+.template-img {
+  width: 200px;
+  object-fit: cover;
+}
+
+.article-container {
+  padding: 1rem;
+}
