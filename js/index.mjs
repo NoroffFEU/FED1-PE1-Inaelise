@@ -102,6 +102,9 @@ function renderPostHtml(post) {
   postImage.classList.add("template-img");
   postImage.src = post.media.url;
 
+  const articleContent = document.createElement("div");
+  articleContent.classList.add("article-container");
+
   const postTitle = document.createElement("h3");
   postTitle.classList.add("template-title");
   postTitle.textContent = post.title;
@@ -121,7 +124,8 @@ function renderPostHtml(post) {
   postBody.textContent = shortenBody(post.body, 110);
 
   displayContainer.append(blogPost);
-  blogPost.append(postTitle, postImage, postBody);
+  articleContent.append(postTitle, postBody);
+  blogPost.append(postImage, articleContent);
 
   return blogPost;
 }
