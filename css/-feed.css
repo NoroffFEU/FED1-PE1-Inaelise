@@ -37,3 +37,25 @@
 .template-body {
   font-size: 1rem;
 }
+
+.slider-links {
+  display: flex;
+}
+
+.slider-link {
+  background-color: var(--grey);
+  color: var(--black);
+  width: 270px;
+}
+
+.slider-img {
+  width: 270px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
