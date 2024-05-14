@@ -1,5 +1,11 @@
 import { API_BASE_URL } from "./utils/api.mjs";
 import { fetchAuth } from "./utils/fetchAuth.mjs";
+import { shortenString } from "./utils/shortenString.mjs";
+import {
+  renderSlideOne,
+  renderSlideThree,
+  renderSlideTwo,
+} from "./utils/renderSlides.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -21,75 +27,30 @@ document.documentElement.addEventListener("click", (e) => {
   }
 });
 
-//Access token and gets blog posts function
-/* async function displayPosts(url) {
-  try {
-    const getOptions = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const res = await fetch(url, getOptions);
-    console.log(res);
-    const json = await res.json();
-    console.log(json);
-  } catch (error) {
-    console.log(error);
-  }
-} */
-
-/* function renderPostHtml(post) {
-  const blogPost = document.createElement("a");
-  blogPost.href = "./post/index.html?id=" + post.id;
-  blogPost.title = "Click to view article";
-  blogPost.classList.add("article-list");
-
-  const postImage = document.createElement("img");
-  postImage.src = post.image.url;
-
-  const postTitle = document.createElement("h3");
-  postTitle.textContent = post.title;
-
-  blogPost.append(postImage, postTitle);
-
-  return blogPost;
-}
- */
-/* function displayPosts(posts) {
-  const displayContainer = document.getElementById("display-container");
-  displayContainer.textContent = "";
-
-  posts.forEach((post) => {
-    const postHtml = renderPostHtml(post);
-    displayContainer.appendChild(postHtml);
-  });
-}
-
-async function renderPage() {
-  try {
-    const res = await fetch(postsUrl);
-    const json = await res.json();
-    const posts = json.data;
-    console.log(posts);
-    displayPosts(posts);
-  } catch (error) {
-    alert("Error fetching posts", error);
-  }
-} */
-
-/* renderPage(); */
-
 const postsUrl = `${API_BASE_URL}blog/posts/OlaNordmann`;
 
+//Display list of posts
 async function getPosts() {
   const res = await fetchAuth(postsUrl);
   const json = await res.json();
   const posts = json.data;
   console.log(posts);
+  if (res.ok) {
+    return posts;
+  }
 
-  return posts;
+  throw new Error(json.message);
 }
+
+// Render slider posts
+async function renderSlider() {
+  const slides = await getPosts();
+  renderSlideOne(slides);
+  renderSlideTwo(slides);
+  renderSlideThree(slides);
+}
+
+renderSlider();
 
 function renderPostHtml(post) {
   const displayContainer = document.getElementById("display-container");
@@ -113,15 +74,7 @@ function renderPostHtml(post) {
   postBody.classList.add("template-body");
 
   // Function to shorten the body string.
-  function shortenBody(str, max) {
-    const shorten = str.indexOf(" ", max);
-    if (shorten === -1) {
-      return str;
-    }
-    return str.substring(0, shorten) + "...";
-  }
-
-  postBody.textContent = shortenBody(post.body, 110);
+  postBody.textContent = shortenString(post.body, 110);
 
   displayContainer.append(blogPost);
   articleContent.append(postTitle, postBody);
@@ -130,10 +83,10 @@ function renderPostHtml(post) {
   return blogPost;
 }
 
-async function renderPosts() {
+async function renderPostList() {
   const posts = await getPosts();
 
   posts.forEach((post) => renderPostHtml(post));
 }
 
-renderPosts();
+renderPostList();
