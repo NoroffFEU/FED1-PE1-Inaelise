@@ -73,11 +73,29 @@
     </header>
     <main>
       <section>
-        <div></div>
+        <div class="slider-container">
+          <div class="slider-links">
+            <a class="slider-link slide-one visible"></a>
+            <a class="slider-link slide-two hidden"></a>
+            <a class="slider-link slide-three hidden"></a>
+          </div>
+          <button class="prev chevron">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="next chevron">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <div>
+            <span class="progress active"></span>
+            <span class="progress"></span>
+            <span class="progress"></span>
+          </div>
+        </div>
       </section>
       <section>
         <h1>latest posts</h1>
         <div id="display-container"></div>
+        <div id="pagination"></div>
       </section>
     </main>
     <footer>
