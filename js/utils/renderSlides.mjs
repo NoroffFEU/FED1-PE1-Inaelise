@@ -5,11 +5,16 @@ export function renderSlideOne(post) {
   const firstSlide = post[0];
   slideOne.href = "./post/index.html?id=" + firstSlide.id;
   slideOne.title = "Click to view article";
-  slideOne.innerHTML = `<img class="slider-img" src="${
-    firstSlide.media.url
-  }" /><div class="slide-content"><h3 class="slider-title">${
-    firstSlide.title
-  }</h3><p>${shortenString(firstSlide.body, 25)}</p></div>`;
+  slideOne.innerHTML = `
+    <img class="slider-img" src="${firstSlide.media.url}" />
+    <div class="slide-content">
+      <h3 class="slider-title">${firstSlide.title}</h3>
+      <p>${shortenString(firstSlide.body, 50)}</p>
+      <div class="read-more-container">
+        <p class="read-more">read more</p>
+        <i class="fa-solid fa-arrow-right-long read-arrow"></i>
+      </div>
+    </div>`;
 }
 
 export function renderSlideTwo(post) {
@@ -17,11 +22,16 @@ export function renderSlideTwo(post) {
   const secondSlide = post[1];
   slideTwo.href = "./post/index.html?id=" + secondSlide.id;
   slideTwo.title = "Click to view article";
-  slideTwo.innerHTML = `<img class="slider-img" src="${
-    secondSlide.media.url
-  }" /><div class="slide-content"><h3 class="slider-title">${
-    secondSlide.title
-  }</h3><p>${shortenString(secondSlide.body, 25)}</p></div>`;
+  slideTwo.innerHTML = `
+    <img class="slider-img" src="${secondSlide.media.url}" />
+    <div class="slide-content">
+      <h3 class="slider-title">${secondSlide.title}</h3>
+      <p>${shortenString(secondSlide.body, 50)}</p>
+      <div class="read-more-container">
+        <p class="read-more">read more</p>
+        <i class="fa-solid fa-arrow-right-long read-arrow"></i>
+      </div>
+    </div>`;
 }
 
 export function renderSlideThree(post) {
@@ -29,9 +39,14 @@ export function renderSlideThree(post) {
   const thirdSlide = post[2];
   slideThree.href = "./post/index.html?id=" + thirdSlide.id;
   slideThree.title = "Click to view article";
-  slideThree.innerHTML = `<img class="slider-img" src="${
-    thirdSlide.media.url
-  }" /><div class="slide-content"><h3 class="slider-title">${
-    thirdSlide.title
-  }</h3><p>${shortenString(thirdSlide.body, 25)}</p></div>`;
+  slideThree.innerHTML = `
+    <img class="slider-img" src="${thirdSlide.media.url}" />
+    <div class="slide-content">
+      <h3 class="slider-title">${thirdSlide.title}</h3>
+      <p>${shortenString(thirdSlide.body, 50)}</p>
+      <div class="read-more-container">
+        <p class="read-more">read more</p>
+        <i class="fa-solid fa-arrow-right-long read-arrow"></i>
+      </div>
+    </div>`;
 }
