@@ -15,7 +15,6 @@
 
 .article-link:hover {
   box-shadow: 5px 5px var(--blue);
-  animation-duration: 0.35s;
 }
 
 .template-img {
@@ -34,8 +33,20 @@
   margin-bottom: 0;
 }
 
+.template-title,
+.slider-title {
+  text-transform: uppercase;
+  font-weight: var(--bolder);
+}
+
 .template-body {
   font-size: 1rem;
+}
+
+.slider-container {
+  position: relative;
+  max-width: 400px;
+  margin: auto;
 }
 
 .slider-links {
@@ -50,14 +61,30 @@
   border-radius: 10px;
 }
 
+.slider-link:hover {
+  box-shadow: 5px 5px var(--blue);
+}
+
 .slider-img {
   width: 270px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
 .slide-content {
   padding-right: 1rem;
   padding-left: 1rem;
+  font-weight: var(--bolder);
+}
+
+.slider-title {
+  font-size: var(--s);
+}
+
+.slider-body,
+.slider-title {
+  margin: 0.3rem 0;
 }
 
 .hidden {
@@ -89,6 +116,7 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+  padding: 1.5rem 0;
 }
 
 .progress {
@@ -97,4 +125,35 @@
   border: 2px solid var(--white);
   border-radius: 50%;
   display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.progress:hover {
+  transform: scale(1.2);
+}
+
+.active {
+  background-color: var(--white);
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  color: var(--white);
+  border: none;
+  background: none;
+  font-size: var(--xs);
+  transition: transform 0.2s;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover,
+.next:hover {
+  transform: scale(1.3);
 }
