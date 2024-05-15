@@ -40,16 +40,24 @@
 
 .slider-links {
   display: flex;
+  justify-content: center;
 }
 
 .slider-link {
   background-color: var(--grey);
   color: var(--black);
   width: 270px;
+  border-radius: 10px;
 }
 
 .slider-img {
   width: 270px;
+  border-radius: 8px;
+}
+
+.slide-content {
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .hidden {
@@ -58,4 +66,35 @@
 
 .visible {
   display: block;
+}
+
+.read-more-container {
+  color: var(--blue);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: var(--bolder);
+  font-size: 0.9rem;
+}
+
+.read-more {
+  margin-bottom: 0;
+}
+
+.read-arrow {
+  font-size: var(--xs);
+  margin-bottom: 1rem;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.progress {
+  height: 13px;
+  width: 13px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  display: inline-block;
 }
