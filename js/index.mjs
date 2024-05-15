@@ -29,7 +29,7 @@ document.documentElement.addEventListener("click", (e) => {
 
 const postsUrl = `${API_BASE_URL}blog/posts/OlaNordmann`;
 
-//Display list of posts
+//Gets list of posts
 async function getPosts() {
   const res = await fetchAuth(postsUrl);
   const json = await res.json();
@@ -51,6 +51,57 @@ async function renderSlider() {
 }
 
 renderSlider();
+
+//Slider functions
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const postSlides = document.querySelectorAll(".slider-link");
+const progress = document.querySelectorAll(".progress");
+const totalSlides = postSlides.length;
+let slidePosition = 0;
+
+next.addEventListener("click", nextSlide);
+prev.addEventListener("click", prevSlide);
+
+function updatePosition() {
+  for (let slide of postSlides) {
+    slide.classList.remove("visible");
+    slide.classList.add("hidden");
+  }
+
+  postSlides[slidePosition].classList.remove("hidden");
+  postSlides[slidePosition].classList.add("visible");
+
+  for (let dot of progress) {
+    dot.className = dot.className.replace("active", "");
+  }
+  progress[slidePosition].classList.add("active");
+}
+
+function nextSlide() {
+  if (slidePosition === totalSlides - 1) {
+    slidePosition = 0;
+  } else {
+    slidePosition++;
+  }
+  updatePosition();
+}
+
+function prevSlide() {
+  if (slidePosition === 0) {
+    slidePosition = totalSlides - 1;
+  } else {
+    slidePosition--;
+  }
+  updatePosition();
+}
+
+progress.forEach((dot, dotPosition) => {
+  dot.addEventListener("click", () => {
+    slidePosition = dotPosition;
+    updatePosition(dotPosition);
+  });
+});
 
 function renderPostHtml(post) {
   const displayContainer = document.getElementById("display-container");
@@ -74,7 +125,7 @@ function renderPostHtml(post) {
   postBody.classList.add("template-body");
 
   // Function to shorten the body string.
-  postBody.textContent = shortenString(post.body, 110);
+  postBody.textContent = shortenString(post.body, 90);
 
   displayContainer.append(blogPost);
   articleContent.append(postTitle, postBody);
@@ -83,6 +134,7 @@ function renderPostHtml(post) {
   return blogPost;
 }
 
+// Renders list of posts
 async function renderPostList() {
   const posts = await getPosts();
 

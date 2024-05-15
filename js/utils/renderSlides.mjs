@@ -9,7 +9,7 @@ export function renderSlideOne(post) {
     <img class="slider-img" src="${firstSlide.media.url}" />
     <div class="slide-content">
       <h3 class="slider-title">${firstSlide.title}</h3>
-      <p>${shortenString(firstSlide.body, 50)}</p>
+      <p class="slider-body">${shortenString(firstSlide.body, 50)}</p>
       <div class="read-more-container">
         <p class="read-more">read more</p>
         <i class="fa-solid fa-arrow-right-long read-arrow"></i>
@@ -26,7 +26,7 @@ export function renderSlideTwo(post) {
     <img class="slider-img" src="${secondSlide.media.url}" />
     <div class="slide-content">
       <h3 class="slider-title">${secondSlide.title}</h3>
-      <p>${shortenString(secondSlide.body, 50)}</p>
+      <p class="slider-body">${shortenString(secondSlide.body, 50)}</p>
       <div class="read-more-container">
         <p class="read-more">read more</p>
         <i class="fa-solid fa-arrow-right-long read-arrow"></i>
@@ -43,7 +43,7 @@ export function renderSlideThree(post) {
     <img class="slider-img" src="${thirdSlide.media.url}" />
     <div class="slide-content">
       <h3 class="slider-title">${thirdSlide.title}</h3>
-      <p>${shortenString(thirdSlide.body, 50)}</p>
+      <p class="slider-body">${shortenString(thirdSlide.body, 50)}</p>
       <div class="read-more-container">
         <p class="read-more">read more</p>
         <i class="fa-solid fa-arrow-right-long read-arrow"></i>
