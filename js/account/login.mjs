@@ -54,6 +54,7 @@ async function loginUser(url) {
       alert("Wrong Username or Password");
     } else {
       alert("You're logged in!");
+      window.location.href = "../index.html";
     }
     const accessToken = json.data.accessToken;
     storage.saveToStorage("accessToken", accessToken);
