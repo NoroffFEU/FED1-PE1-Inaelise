@@ -36,6 +36,7 @@ header ul {
   transform: translateY(0.5rem);
   visibility: hidden;
   opacity: 0;
+  z-index: 100;
 }
 
 .dropdown ul {
@@ -46,7 +47,7 @@ header ul {
   background: var(--black);
 }
 
-.visible {
+.show {
   transform: translateY(0rem);
   visibility: visible;
   opacity: 1;
