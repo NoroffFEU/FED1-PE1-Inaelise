@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "./utils/api.mjs";
+import { API_BASE_URL } from "../utils/api.mjs";
 
 //Dropdown menu
 const menuBtn = document.getElementById("menu-btn");

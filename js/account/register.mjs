@@ -1,5 +1,4 @@
-import { API_BASE_URL } from "./utils/api.mjs";
-import * as storage from "./utils/localStorage.mjs";
+import { API_BASE_URL } from "../utils/api.mjs";
 
 //Dropdown menu
 const menuBtn = document.getElementById("menu-btn");
@@ -22,45 +21,49 @@ document.documentElement.addEventListener("click", (e) => {
   }
 });
 
-//Login form
-const loginForm = {
+//Register form
+const registerForm = {
+  username: document.getElementById("username-input"),
+  avatar: document.getElementById("avatar-input"),
   email: document.getElementById("email-input"),
   password: document.getElementById("password-input"),
-  submit: document.getElementById("login-submit"),
+  submit: document.getElementById("register-btn"),
 };
-const loginUrl = `${API_BASE_URL}auth/login`;
 
-loginForm.submit.addEventListener("click", (e) => {
+const registerUrl = `${API_BASE_URL}auth/register`;
+
+registerForm.submit.addEventListener("click", (e) => {
   e.preventDefault();
-  loginUser(loginUrl);
+  registerUser(registerUrl);
 });
 
-async function loginUser(url) {
+async function registerUser(url) {
   try {
-    const loginData = {
+    const data = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: loginForm.email.value,
-        password: loginForm.password.value,
+        name: registerForm.username.value,
+        avatar: {
+          url: registerForm.avatar.value,
+        },
+        email: registerForm.email.value,
+        password: registerForm.password.value,
       }),
     };
-    const res = await fetch(url, loginData);
+    const res = await fetch(url, data);
+    console.log(res);
     const json = await res.json();
     console.log(json);
     if (json.errors) {
-      alert("Wrong Username or Password");
+      const obj = json.errors;
+      for (let i = 0; i < obj.length; i++) alert(obj[i].message);
     } else {
-      alert("You're logged in!");
+      alert("Thank you for registering!");
     }
-    const accessToken = json.data.accessToken;
-    storage.saveToStorage("accessToken", accessToken);
-    const user = json.data;
-    localStorage.setItem("user", user);
-    storage.saveToStorage("user", user);
   } catch (error) {
-    console.log(error);
+    alert("Error registering", error);
   }
 }
