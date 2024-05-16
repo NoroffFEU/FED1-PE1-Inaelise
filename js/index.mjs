@@ -10,10 +10,10 @@ import {
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
 
-dropdownMenu.classList.remove("visible");
+dropdownMenu.classList.remove("show");
 
 function toggleDropdown() {
-  dropdownMenu.classList.toggle("visible");
+  dropdownMenu.classList.toggle("show");
 }
 
 menuBtn.addEventListener("click", (e) => {
@@ -22,7 +22,7 @@ menuBtn.addEventListener("click", (e) => {
 });
 
 document.documentElement.addEventListener("click", (e) => {
-  if (dropdownMenu.classList.contains("visible")) {
+  if (dropdownMenu.classList.contains("show")) {
     toggleDropdown();
   }
 });
