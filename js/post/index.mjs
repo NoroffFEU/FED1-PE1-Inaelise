@@ -1,4 +1,6 @@
 import { API_BASE_URL } from "../utils/api.mjs";
+import { getPosts } from "../utils/getPosts.mjs";
+import { shortenString } from "../utils/shortenString.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -42,8 +44,6 @@ function renderPostPageHtml(post) {
   author.textContent = post.author.name;
   const likes = document.createElement("p");
   likes.textContent = "16 likes";
-  const comments = document.createElement("p");
-  comments.textContent = "4 comments";
 
   const contentDiv = document.createElement("div");
   contentDiv.classList.add("content-div");
@@ -51,9 +51,20 @@ function renderPostPageHtml(post) {
   const isoDate = new Date(post.updated);
   const localeFormat = isoDate.toLocaleDateString("en-GB");
   date.textContent = `Last updated: ${localeFormat}`;
+  const edit = document.createElement("a");
+  edit.href = "./edit.html?id=" + post.id;
+  edit.innerHTML = `<i class="fa-solid fa-pen-to-square edit-icon"></i>`;
 
-  contentDiv.append(date);
-  contentInfo.append(author, likes, comments);
+  const postTitle = document.createElement("h1");
+  postTitle.textContent = post.title;
+  postTitle.classList.add("post-title");
+
+  const postBody = document.createElement("p");
+  postBody.textContent = post.body;
+  postBody.classList.add("post-body");
+
+  contentDiv.append(date, edit, postTitle, postBody);
+  contentInfo.append(author, likes);
   content.append(contentInfo, contentDiv);
   info.append(authorImg);
   article.append(image, info, content);
@@ -61,21 +72,64 @@ function renderPostPageHtml(post) {
 
 const postId = new URLSearchParams(window.location.search).get("id");
 const postUrl = `${API_BASE_URL}blog/posts/OlaNordmann/${postId}`;
+const postsUrl = `${API_BASE_URL}blog/posts/OlaNordmann`;
 
-async function getPost() {
-  const res = await fetch(postUrl);
-  const json = await res.json();
-  const post = json.data;
-  console.log(post);
-  if (res.ok) {
-    return post;
-  }
+async function renderFeaturedPosts() {
+  const posts = await getPosts(postsUrl);
+  const featured = document.querySelector(".featured-posts");
 
-  throw new Error(json.message);
+  const postOne = document.createElement("a");
+  const firstPost = posts[0];
+  postOne.href = "../post/index.html?id=" + firstPost.id;
+  postOne.title = "Click to view article";
+  postOne.innerHTML = `
+    <img class="slider-img" src="${firstPost.media.url}" />
+    <div class="slide-content">
+      <h3 class="slider-title">${firstPost.title}</h3>
+      <p class="slider-body">${shortenString(firstPost.body, 50)}</p>
+      <div class="read-more-container">
+        <p class="read-more">read more</p>
+        <i class="fa-solid fa-arrow-right-long read-arrow"></i>
+      </div>
+    </div>`;
+
+  const postTwo = document.createElement("a");
+  const secondPost = posts[1];
+  postTwo.href = "../post/index.html?id=" + secondPost.id;
+  postTwo.title = "Click to view article";
+  postTwo.innerHTML = `
+      <img class="slider-img" src="${secondPost.media.url}" />
+      <div class="slide-content">
+        <h3 class="slider-title">${secondPost.title}</h3>
+        <p class="slider-body">${shortenString(secondPost.body, 50)}</p>
+        <div class="read-more-container">
+          <p class="read-more">read more</p>
+          <i class="fa-solid fa-arrow-right-long read-arrow"></i>
+        </div>
+      </div>`;
+
+  const postThree = document.createElement("a");
+  const thirdPost = posts[2];
+  postThree.href = "../post/index.html?id=" + thirdPost.id;
+  postThree.title = "Click to view article";
+  postThree.innerHTML = `
+      <img class="slider-img" src="${thirdPost.media.url}" />
+      <div class="slide-content">
+        <h3 class="slider-title">${thirdPost.title}</h3>
+        <p class="slider-body">${shortenString(thirdPost.body, 50)}</p>
+        <div class="read-more-container">
+          <p class="read-more">read more</p>
+          <i class="fa-solid fa-arrow-right-long read-arrow"></i>
+        </div>
+      </div>`;
+
+  featured.append(postOne, postTwo, postThree);
 }
 
+renderFeaturedPosts();
+
 async function renderPostPage() {
-  const post = await getPost();
+  const post = await getPosts(postUrl);
   renderPostPageHtml(post);
 }
 
