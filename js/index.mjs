@@ -1,11 +1,11 @@
 import { API_BASE_URL } from "./utils/api.mjs";
-import { fetchAuth } from "./utils/fetchAuth.mjs";
 import { shortenString } from "./utils/shortenString.mjs";
 import {
   renderSlideOne,
   renderSlideThree,
   renderSlideTwo,
 } from "./utils/renderSlides.mjs";
+import { getPosts } from "./utils/getPosts.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -29,22 +29,9 @@ document.documentElement.addEventListener("click", (e) => {
 
 const postsUrl = `${API_BASE_URL}blog/posts/OlaNordmann`;
 
-//Gets list of posts
-async function getPosts() {
-  const res = await fetchAuth(postsUrl);
-  const json = await res.json();
-  const posts = json.data;
-  console.log(posts);
-  if (res.ok) {
-    return posts;
-  }
-
-  throw new Error(json.message);
-}
-
 // Render slider posts
 async function renderSlider() {
-  const slides = await getPosts();
+  const slides = await getPosts(postsUrl);
   renderSlideOne(slides);
   renderSlideTwo(slides);
   renderSlideThree(slides);
@@ -136,7 +123,7 @@ function renderPostHtml(post) {
 
 // Renders list of posts
 async function renderPostList() {
-  const posts = await getPosts();
+  const posts = await getPosts(postsUrl);
 
   posts.forEach((post) => renderPostHtml(post));
 }
