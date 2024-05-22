@@ -1,3 +1,23 @@
+const menuBtn = document.getElementById("menu-btn");
+const dropdownMenu = document.getElementById("dropdown");
+
+dropdownMenu.classList.remove("show");
+
+function toggleDropdown() {
+  dropdownMenu.classList.toggle("show");
+}
+
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleDropdown();
+});
+
+document.documentElement.addEventListener("click", (e) => {
+  if (dropdownMenu.classList.contains("show")) {
+    toggleDropdown();
+  }
+});
+
 //Create blog posts
 async function createPosts(url, userData) {
   console.log(url, userData);
