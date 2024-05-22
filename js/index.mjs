@@ -95,6 +95,7 @@ function renderPostHtml(post) {
   const blogPost = document.createElement("a");
   blogPost.href = "./post/index.html?id=" + post.id;
   blogPost.title = "Click to view article";
+  blogPost.setAttribute("aria-label", "Link");
   blogPost.classList.add("article-link");
 
   const postImage = document.createElement("img");

@@ -5,6 +5,7 @@ export function renderSlideOne(post) {
   const firstSlide = post[0];
   slideOne.href = "./post/index.html?id=" + firstSlide.id;
   slideOne.title = "Click to view article";
+  slideOne.setAttribute("aria-label", "Link");
   slideOne.innerHTML = `
     <img class="slider-img" src="${firstSlide.media.url}" />
     <div class="slide-content">
@@ -22,6 +23,7 @@ export function renderSlideTwo(post) {
   const secondSlide = post[1];
   slideTwo.href = "./post/index.html?id=" + secondSlide.id;
   slideTwo.title = "Click to view article";
+  slideTwo.setAttribute("aria-label", "Link");
   slideTwo.innerHTML = `
     <img class="slider-img" src="${secondSlide.media.url}" />
     <div class="slide-content">
@@ -39,6 +41,7 @@ export function renderSlideThree(post) {
   const thirdSlide = post[2];
   slideThree.href = "./post/index.html?id=" + thirdSlide.id;
   slideThree.title = "Click to view article";
+  slideThree.setAttribute("aria-label", "Link");
   slideThree.innerHTML = `
     <img class="slider-img" src="${thirdSlide.media.url}" />
     <div class="slide-content">
