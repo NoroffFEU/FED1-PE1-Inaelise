@@ -1,23 +1,15 @@
-.edit-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  font-size: var(--xxs);
-}
-
-.edit-form textarea,
+.form textarea,
 .delete-btn {
   border-radius: 6px;
   border: none;
 }
 
-.edit-form textarea {
+.form textarea {
   height: 200px;
   width: 280px;
 }
 
-.edit-form input[type="submit"],
+.form input[type="submit"],
 .delete-btn {
   width: 100px;
   height: 40px;

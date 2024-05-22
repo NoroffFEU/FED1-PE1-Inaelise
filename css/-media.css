@@ -137,12 +137,12 @@
     width: 240px;
   }
 
-  /* Edit page */
-  .edit-form input {
+  /* Edit page & Create page */
+  .form input {
     width: 350px;
   }
 
-  .edit-form textarea {
+  .form textarea {
     width: 600px;
   }
 
