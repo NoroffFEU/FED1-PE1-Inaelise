@@ -4,6 +4,7 @@
 @import url(-feed.css);
 @import url(-blog-post.css);
 @import url(-edit.css);
+@import url(-create.css);
 @import url(-register.css);
 @import url(-login.css);
 
@@ -79,4 +80,12 @@ input[type="submit"]:hover {
   border-radius: 10px;
   padding: 0.3rem;
   display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--xxs);
 }
