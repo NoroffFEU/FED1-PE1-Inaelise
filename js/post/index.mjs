@@ -43,6 +43,7 @@ function renderPostPageHtml(post) {
   author.classList.add("author");
   author.textContent = post.author.name;
   const likes = document.createElement("p");
+  likes.classList.add("likes");
   likes.textContent = "16 likes";
 
   const contentDiv = document.createElement("div");
@@ -53,7 +54,7 @@ function renderPostPageHtml(post) {
   date.textContent = `Last updated: ${localeFormat}`;
   const edit = document.createElement("a");
   edit.href = "./edit.html?id=" + post.id;
-  edit.innerHTML = `<i class="fa-solid fa-pen-to-square edit-icon"></i>`;
+  edit.innerHTML = `<i class="fa-solid fa-pen-to-square edit-icon" title="Click to edit post" aria-label="Edit"></i>`;
 
   const postTitle = document.createElement("h1");
   postTitle.textContent = post.title;
@@ -63,10 +64,10 @@ function renderPostPageHtml(post) {
   postBody.textContent = post.body;
   postBody.classList.add("post-body");
 
-  contentDiv.append(date, edit, postTitle, postBody);
+  contentDiv.append(date, edit);
   contentInfo.append(author, likes);
-  content.append(contentInfo, contentDiv);
-  info.append(authorImg);
+  content.append(postTitle, postBody);
+  info.append(authorImg, contentInfo, contentDiv);
   article.append(image, info, content);
 }
 
@@ -82,12 +83,14 @@ async function renderFeaturedPosts() {
   const firstPost = posts[0];
   postOne.href = "../post/index.html?id=" + firstPost.id;
   postOne.title = "Click to view article";
+  postOne.setAttribute("aria-label", "Link");
+  postOne.classList.add("slide");
   postOne.innerHTML = `
-    <img class="slider-img" src="${firstPost.media.url}" />
-    <div class="slide-content">
-      <h3 class="slider-title">${firstPost.title}</h3>
-      <p class="slider-body">${shortenString(firstPost.body, 50)}</p>
-      <div class="read-more-container">
+    <img class="slide-img" src="${firstPost.media.url}" />
+    <div class="slider-content">
+      <h3 class="slide-title">${firstPost.title}</h3>
+      <p class="slide-body">${shortenString(firstPost.body, 50)}</p>
+      <div class="read-more-container read">
         <p class="read-more">read more</p>
         <i class="fa-solid fa-arrow-right-long read-arrow"></i>
       </div>
@@ -97,12 +100,14 @@ async function renderFeaturedPosts() {
   const secondPost = posts[1];
   postTwo.href = "../post/index.html?id=" + secondPost.id;
   postTwo.title = "Click to view article";
+  postTwo.setAttribute("aria-label", "Link");
+  postTwo.classList.add("slide");
   postTwo.innerHTML = `
-      <img class="slider-img" src="${secondPost.media.url}" />
-      <div class="slide-content">
-        <h3 class="slider-title">${secondPost.title}</h3>
-        <p class="slider-body">${shortenString(secondPost.body, 50)}</p>
-        <div class="read-more-container">
+      <img class="slide-img" src="${secondPost.media.url}" />
+      <div class="slider-content">
+        <h3 class="slide-title">${secondPost.title}</h3>
+        <p class="slide-body">${shortenString(secondPost.body, 50)}</p>
+        <div class="read-more-container read">
           <p class="read-more">read more</p>
           <i class="fa-solid fa-arrow-right-long read-arrow"></i>
         </div>
@@ -112,12 +117,14 @@ async function renderFeaturedPosts() {
   const thirdPost = posts[2];
   postThree.href = "../post/index.html?id=" + thirdPost.id;
   postThree.title = "Click to view article";
+  postThree.setAttribute("aria-label", "Link");
+  postThree.classList.add("slide");
   postThree.innerHTML = `
-      <img class="slider-img" src="${thirdPost.media.url}" />
-      <div class="slide-content">
-        <h3 class="slider-title">${thirdPost.title}</h3>
-        <p class="slider-body">${shortenString(thirdPost.body, 50)}</p>
-        <div class="read-more-container">
+      <img class="slide-img" src="${thirdPost.media.url}" />
+      <div class="slider-content">
+        <h3 class="slide-title">${thirdPost.title}</h3>
+        <p class="slide-body">${shortenString(thirdPost.body, 50)}</p>
+        <div class="read-more-container read">
           <p class="read-more">read more</p>
           <i class="fa-solid fa-arrow-right-long read-arrow"></i>
         </div>
