@@ -64,12 +64,20 @@ input {
   border-radius: 6px;
   border: none;
   padding-left: 0.6rem;
-  font-size: 0.9rem;
 }
 
 input[type="submit"]:hover {
   cursor: pointer;
   transform: scale(1.2);
+}
+
+input,
+textarea {
+  font-size: 0.9rem;
+}
+
+textarea {
+  font-family: sans-serif;
 }
 
 #greeting {
