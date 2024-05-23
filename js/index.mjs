@@ -6,6 +6,7 @@ import {
   renderSlideTwo,
 } from "./utils/renderSlides.mjs";
 import { getPosts } from "./utils/getPosts.mjs";
+import { showCreateLink } from "./utils/owner.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -130,3 +131,4 @@ async function renderPostList() {
 }
 
 renderPostList();
+showCreateLink();

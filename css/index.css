@@ -89,3 +89,7 @@ input[type="submit"]:hover {
   gap: 1rem;
   font-size: var(--xxs);
 }
+
+.hidden-link {
+  display: none;
+}

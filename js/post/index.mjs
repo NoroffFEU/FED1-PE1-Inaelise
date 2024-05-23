@@ -1,6 +1,7 @@
 import { API_BASE_URL } from "../utils/api.mjs";
 import { getPosts } from "../utils/getPosts.mjs";
 import { shortenString } from "../utils/shortenString.mjs";
+import { showCreateLink, showEditBtn } from "../utils/owner.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -54,6 +55,8 @@ function renderPostPageHtml(post) {
   date.textContent = `Last updated: ${localeFormat}`;
   const edit = document.createElement("a");
   edit.href = "./edit.html?id=" + post.id;
+  edit.setAttribute("id", "owner-edit");
+  edit.classList.add("hidden-link");
   edit.innerHTML = `<i class="fa-solid fa-pen-to-square edit-icon" title="Click to edit post" aria-label="Edit"></i>`;
 
   const postTitle = document.createElement("h1");
@@ -138,6 +141,8 @@ renderFeaturedPosts();
 async function renderPostPage() {
   const post = await getPosts(postUrl);
   renderPostPageHtml(post);
+  showCreateLink();
+  showEditBtn();
 }
 
 renderPostPage();
