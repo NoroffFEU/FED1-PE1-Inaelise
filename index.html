@@ -54,7 +54,7 @@
             <!-- Hidden initially -->
             <div class="dropdown show" id="dropdown">
               <ul>
-                <li class="nav-link">
+                <li class="nav-link hidden-link" id="create-link">
                   <a
                     href="./post/create.html"
                     title="Go to create article page"
@@ -105,16 +105,32 @@
             <a class="slider-link slide-two hidden"></a>
             <a class="slider-link slide-three hidden"></a>
           </div>
-          <button class="prev chevron">
+          <button
+            class="prev chevron"
+            title="View previous slide"
+            aria-label="Button"
+          >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button class="next chevron">
+          <button
+            class="next chevron"
+            title="View next slide"
+            aria-label="Button"
+          >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
           <div class="progress-dots">
-            <span class="progress active"></span>
-            <span class="progress"></span>
-            <span class="progress"></span>
+            <span
+              class="progress active"
+              title="Slide one"
+              aria-label="Button"
+            ></span>
+            <span class="progress" title="Slide two" aria-label="Button"></span>
+            <span
+              class="progress"
+              title="Slide three"
+              aria-label="Button"
+            ></span>
           </div>
         </div>
       </section>
