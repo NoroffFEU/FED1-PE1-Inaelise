@@ -50,13 +50,11 @@ async function createPost(url) {
       }),
     };
     const res = await fetch(url, data);
-    console.log(res);
     const json = await res.json();
     if (json.ok) {
       alert("Article was created!");
     }
   } catch (error) {
-    console.log(error);
     alert("Something went wrong...", error);
   }
 }
