@@ -63,6 +63,7 @@
 
 .post-body {
   padding-bottom: 4rem;
+  white-space: pre-wrap;
 }
 
 .like-icon {
