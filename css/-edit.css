@@ -1,3 +1,7 @@
+.edit-section {
+  margin-bottom: 4rem;
+}
+
 .form textarea,
 .delete-btn {
   border-radius: 6px;
