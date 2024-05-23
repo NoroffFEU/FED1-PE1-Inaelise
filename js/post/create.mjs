@@ -51,8 +51,12 @@ async function createPost(url) {
     };
     const res = await fetch(url, data);
     const json = await res.json();
-    if (json.ok) {
+    if (json.errors) {
+      const obj = json.errors;
+      for (let i = 0; i < obj.length; i++) alert(obj[i].message);
+    } else {
       alert("Article was created!");
+      window.location.href = "../index.html";
     }
   } catch (error) {
     alert("Something went wrong...", error);
