@@ -108,39 +108,48 @@
           <input
             type="text"
             name="title-input"
-            id="title-input"
+            id="create-title"
             title="Add article title"
+            required
           />
           <label for="url-input">image url</label>
           <input
             type="url"
             name="url-input"
-            id="url-input"
+            id="create-url"
             placeholder="https://example.com"
             pattern="https://.*"
             title="Add image url"
+            required
           />
           <label for="alt-input">image alt text</label>
           <input
             type="text"
             name="alt-input"
-            id="alt-input"
-            title="Add image alt text "
+            id="create-alt"
+            title="Add image alt text"
+            required
           />
           <label for="tag-input">tags</label>
           <input
             type="text"
             name="tag-input"
-            id="tag-input"
+            id="create-tag"
             title="Add tags - separate with comma"
           />
           <label for="content-input">content</label>
           <textarea
             name="content-input"
-            id="content-input"
+            id="create-content"
             title="Add article content"
+            required
           ></textarea>
-          <input type="submit" value="create" title="Click to create article" />
+          <input
+            type="submit"
+            class="create-btn"
+            value="create"
+            title="Click to create article"
+          />
         </form>
       </section>
     </main>
