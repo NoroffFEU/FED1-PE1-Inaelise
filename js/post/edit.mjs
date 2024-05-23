@@ -1,6 +1,7 @@
 import { API_BASE_URL } from "../utils/api.mjs";
 import { header } from "../utils/fetchAuth.mjs";
 import { getPosts } from "../utils/getPosts.mjs";
+import { showCreateLink } from "../utils/owner.mjs";
 
 //Dropdown menu
 const menuBtn = document.getElementById("menu-btn");
@@ -22,6 +23,8 @@ document.documentElement.addEventListener("click", (e) => {
     toggleDropdown();
   }
 });
+
+showCreateLink();
 
 //Edit form
 const editForm = {
