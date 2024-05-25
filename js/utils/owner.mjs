@@ -1,9 +1,9 @@
 import { loadStorage } from "./localStorage.mjs";
 
 export function showCreateLink() {
-  const owner = loadStorage("user");
+  const user = loadStorage("user");
   const createLink = document.getElementById("create-link");
-  if (owner.name === "OlaNordmann") {
+  if (user) {
     createLink.classList.remove("hidden-link");
   }
 }
@@ -11,7 +11,7 @@ export function showCreateLink() {
 export function showEditBtn() {
   const owner = loadStorage("user");
   const editLink = document.getElementById("owner-edit");
-  if (owner.name === "OlaNordmann") {
+  if (owner === true && owner.name === "OlaNordmann") {
     editLink.classList.remove("hidden-link");
   }
 }
