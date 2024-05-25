@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "../utils/api.mjs";
+import { greeting } from "../utils/greeting.mjs";
 import * as storage from "../utils/localStorage.mjs";
 
 //Dropdown menu
@@ -21,6 +22,8 @@ document.documentElement.addEventListener("click", (e) => {
     toggleDropdown();
   }
 });
+
+greeting();
 
 //Login form
 const loginForm = {

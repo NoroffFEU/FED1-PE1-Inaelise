@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "../utils/api.mjs";
+import { greeting } from "../utils/greeting.mjs";
 
 //Dropdown menu
 const menuBtn = document.getElementById("menu-btn");
@@ -20,6 +21,8 @@ document.documentElement.addEventListener("click", (e) => {
     toggleDropdown();
   }
 });
+
+greeting();
 
 //Register form
 const registerForm = {

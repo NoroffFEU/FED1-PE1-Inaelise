@@ -1,5 +1,6 @@
 import { header } from "../utils/fetchAuth.mjs";
 import { API_BASE_URL } from "../utils/api.mjs";
+import { greeting } from "../utils/greeting.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -20,6 +21,8 @@ document.documentElement.addEventListener("click", (e) => {
     toggleDropdown();
   }
 });
+
+greeting();
 
 // Create form
 const createForm = {

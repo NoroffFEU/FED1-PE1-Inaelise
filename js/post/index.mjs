@@ -2,6 +2,7 @@ import { API_BASE_URL } from "../utils/api.mjs";
 import { getPosts } from "../utils/getPosts.mjs";
 import { shortenString } from "../utils/shortenString.mjs";
 import { showCreateLink, showEditBtn } from "../utils/owner.mjs";
+import { greeting } from "../utils/greeting.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -143,6 +144,7 @@ async function renderPostPage() {
   renderPostPageHtml(post);
   showCreateLink();
   showEditBtn();
+  greeting();
 }
 
 renderPostPage();

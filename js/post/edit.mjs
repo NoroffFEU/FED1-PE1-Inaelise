@@ -1,6 +1,7 @@
 import { API_BASE_URL } from "../utils/api.mjs";
 import { header } from "../utils/fetchAuth.mjs";
 import { getPosts } from "../utils/getPosts.mjs";
+import { greeting } from "../utils/greeting.mjs";
 import { showCreateLink } from "../utils/owner.mjs";
 
 //Dropdown menu
@@ -25,6 +26,7 @@ document.documentElement.addEventListener("click", (e) => {
 });
 
 showCreateLink();
+greeting();
 
 //Edit form
 const editForm = {
