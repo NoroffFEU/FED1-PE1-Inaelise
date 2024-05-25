@@ -1,6 +1,7 @@
 import { API_BASE_URL } from "../utils/api.mjs";
 import { greeting } from "../utils/greeting.mjs";
 import * as storage from "../utils/localStorage.mjs";
+import { logout } from "../utils/logout.mjs";
 import { showCreateLink } from "../utils/owner.mjs";
 
 //Dropdown menu
@@ -26,6 +27,7 @@ document.documentElement.addEventListener("click", (e) => {
 
 greeting();
 showCreateLink();
+logout();
 
 //Login form
 const loginForm = {

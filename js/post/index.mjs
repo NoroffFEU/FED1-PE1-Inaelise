@@ -3,6 +3,7 @@ import { getPosts } from "../utils/getPosts.mjs";
 import { shortenString } from "../utils/shortenString.mjs";
 import { showCreateLink, showEditBtn } from "../utils/owner.mjs";
 import { greeting } from "../utils/greeting.mjs";
+import { logout } from "../utils/logout.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -145,6 +146,7 @@ async function renderPostPage() {
   showCreateLink();
   showEditBtn();
   greeting();
+  logout();
 }
 
 renderPostPage();
