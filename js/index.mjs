@@ -93,7 +93,7 @@ progress.forEach((dot, dotPosition) => {
   });
 });
 
-function renderPostHtml(post) {
+/* function renderPostHtml(post) {
   const displayContainer = document.getElementById("display-container");
   const blogPost = document.createElement("a");
   blogPost.href = "./post/index.html?id=" + post.id;
@@ -123,13 +123,76 @@ function renderPostHtml(post) {
   blogPost.append(postImage, articleContent);
 
   return blogPost;
+} */
+
+function paginate(posts, postsPerPage) {
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const pages = [];
+
+  for (let i = 0; i < totalPages; i++) {
+    const start = i * postsPerPage;
+    const end = start + postsPerPage;
+    pages.push(posts.slice(start, end));
+  }
+  return pages;
+}
+
+function renderPagination(paginatedPosts) {
+  const pagination = document.getElementById("pagination");
+  const displayContainer = document.getElementById("display-container");
+  pagination.innerHTML = "";
+
+  paginatedPosts.forEach((page, index) => {
+    const button = document.createElement("button");
+    button.textContent = index + 1;
+    button.addEventListener("click", () => {
+      displayContainer.innerHTML = "";
+      renderPosts(page);
+    });
+    pagination.append(button);
+  });
+}
+
+function renderPost(post, container) {
+  const blogPost = document.createElement("a");
+  blogPost.href = "./post/index.html?id=" + post.id;
+  blogPost.title = "Click to view article";
+  blogPost.setAttribute("aria-label", "Link");
+  blogPost.classList.add("article-link");
+
+  const postImage = document.createElement("img");
+  postImage.classList.add("template-img");
+  postImage.src = post.media.url;
+
+  const articleContent = document.createElement("div");
+  articleContent.classList.add("article-container");
+
+  const postTitle = document.createElement("h3");
+  postTitle.classList.add("template-title");
+  postTitle.textContent = post.title;
+
+  const postBody = document.createElement("p");
+  postBody.classList.add("template-body");
+
+  // Function to shorten the body string.
+  postBody.textContent = shortenString(post.body, 90);
+
+  container.append(blogPost);
+  articleContent.append(postTitle, postBody);
+  blogPost.append(postImage, articleContent);
+}
+
+function renderPosts(posts) {
+  const displayContainer = document.getElementById("display-container");
+  posts.forEach((post) => renderPost(post, displayContainer));
 }
 
 // Renders list of posts
 async function renderPostList() {
   const posts = await getPosts(postsUrl);
-
-  posts.forEach((post) => renderPostHtml(post));
+  const paginatedPosts = paginate(posts, 12);
+  renderPosts(paginatedPosts[0]);
+  renderPagination(paginatedPosts);
 }
 
 logout();
