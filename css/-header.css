@@ -64,3 +64,14 @@ header ul {
 .plus-icon {
   font-size: var(--xs);
 }
+
+.greeting {
+  position: absolute;
+  top: 37px;
+  right: 3px;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  font-family: var(--source);
+}

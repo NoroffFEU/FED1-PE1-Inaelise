@@ -1,4 +1,10 @@
 @media screen and (min-width: 30.07em) {
+  /* Header */
+  .greeting {
+    top: 30px;
+    right: 5%;
+  }
+
   /* Blog Post page */
   .author-img {
     width: 100px;
