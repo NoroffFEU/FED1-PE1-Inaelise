@@ -1,6 +1,7 @@
 import { API_BASE_URL } from "../utils/api.mjs";
 import { greeting } from "../utils/greeting.mjs";
 import * as storage from "../utils/localStorage.mjs";
+import { showCreateLink } from "../utils/owner.mjs";
 
 //Dropdown menu
 const menuBtn = document.getElementById("menu-btn");
@@ -24,6 +25,7 @@ document.documentElement.addEventListener("click", (e) => {
 });
 
 greeting();
+showCreateLink();
 
 //Login form
 const loginForm = {
@@ -53,8 +55,13 @@ async function loginUser(url) {
     const res = await fetch(url, loginData);
     const json = await res.json();
     console.log(json);
+    const userLogged = storage.loadStorage("user");
     if (json.errors) {
       alert("Wrong Username or Password");
+    } else if (userLogged) {
+      alert(
+        "You're already logged in.. Logout first to login to different account"
+      );
     } else {
       alert("You're logged in!");
       window.location.href = "../index.html";
