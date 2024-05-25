@@ -11,7 +11,7 @@ export function showCreateLink() {
 export function showEditBtn() {
   const owner = loadStorage("user");
   const editLink = document.getElementById("owner-edit");
-  if (owner === true && owner.name === "OlaNordmann") {
+  if (owner && owner.name === "OlaNordmann") {
     editLink.classList.remove("hidden-link");
   }
 }
