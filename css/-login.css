@@ -24,15 +24,3 @@
   margin-top: 3rem;
   padding-bottom: 1rem;
 }
-
-.login-form input[type="submit"] {
-  background-color: var(--blue);
-  color: var(--white);
-  width: 130px;
-  box-shadow: 4px 4px var(--black);
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 900;
-  height: 40px;
-  transition: transform 0.2s;
-}

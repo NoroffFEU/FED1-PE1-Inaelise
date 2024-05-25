@@ -75,3 +75,7 @@ header ul {
   font-size: 0.8rem;
   font-family: var(--source);
 }
+
+.logout-btn:hover {
+  cursor: pointer;
+}

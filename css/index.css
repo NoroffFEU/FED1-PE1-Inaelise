@@ -88,6 +88,23 @@ textarea {
   font-size: var(--xxs);
 }
 
+.login-form input[type="submit"],
+.register-form input[type="submit"],
+.create-form input[type="submit"],
+.logout-btn {
+  background-color: var(--blue);
+  color: var(--white);
+  width: 130px;
+  box-shadow: 4px 4px var(--black);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: var(--bolder);
+  height: 40px;
+  transition: transform 0.2s;
+  border: none;
+  border-radius: 6px;
+}
+
 .hidden-link {
   display: none;
 }
