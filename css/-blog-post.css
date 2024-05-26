@@ -81,6 +81,11 @@
   align-items: center;
 }
 
+.feature-section h2 {
+  margin-bottom: 2.5rem;
+  font-size: var(--s);
+}
+
 .featured-posts {
   display: flex;
   flex-direction: column;
