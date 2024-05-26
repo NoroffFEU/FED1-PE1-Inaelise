@@ -143,13 +143,14 @@ function renderPagination(paginatedPosts) {
   pagination.innerHTML = "";
 
   paginatedPosts.forEach((page, index) => {
-    const button = document.createElement("button");
-    button.textContent = index + 1;
-    button.addEventListener("click", () => {
+    const pageBtn = document.createElement("button");
+    pageBtn.classList.add("page-btn");
+    pageBtn.textContent = index + 1;
+    pageBtn.addEventListener("click", () => {
       displayContainer.innerHTML = "";
       renderPosts(page);
     });
-    pagination.append(button);
+    pagination.append(pageBtn);
   });
 }
 
