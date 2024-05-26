@@ -182,6 +182,12 @@
 }
 
 @media screen and (min-width: 64em) {
+  /* Header */
+  .greeting {
+    font-size: 0.9rem;
+    top: 25px;
+  }
+
   /* Home page */
   .slider-container {
     max-width: 1200px;
