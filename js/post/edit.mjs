@@ -109,7 +109,9 @@ async function deletePost(url) {
     if (json.errors) {
       const obj = json.errors;
       for (let i = 0; i < obj.length; i++) alert(obj[i].message);
-    } else {
+    } else if (
+      window.confirm("Are you sure you want to delete the article?") === true
+    ) {
       alert("Post was deleted!");
       window.location.href = "../index.html";
     }
