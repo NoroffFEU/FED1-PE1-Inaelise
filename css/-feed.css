@@ -139,9 +139,14 @@
 
 .prev,
 .next {
-  cursor: pointer;
   position: absolute;
   top: 40%;
+}
+
+.prev,
+.next,
+.page-btn {
+  cursor: pointer;
   color: var(--white);
   border: none;
   background: none;
@@ -154,6 +159,22 @@
 }
 
 .prev:hover,
-.next:hover {
+.next:hover,
+.page-btn:hover {
   transform: scale(1.3);
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.page-btn {
+  font-weight: var(--bold);
+}
+
+.active-page {
+  border: 1px solid var(--blue);
 }
