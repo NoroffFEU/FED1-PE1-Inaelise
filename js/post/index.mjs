@@ -4,6 +4,7 @@ import { shortenString } from "../utils/shortenString.mjs";
 import { showCreateLink, showEditBtn } from "../utils/owner.mjs";
 import { greeting } from "../utils/greeting.mjs";
 import { logout } from "../utils/logout.mjs";
+import loader from "../utils/loader.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -141,12 +142,19 @@ async function renderFeaturedPosts() {
 renderFeaturedPosts();
 
 async function renderPostPage() {
-  const post = await getPosts(postUrl);
-  renderPostPageHtml(post);
-  showCreateLink();
-  showEditBtn();
-  greeting();
-  logout();
+  loader.display();
+  try {
+    const post = await getPosts(postUrl);
+    renderPostPageHtml(post);
+    showCreateLink();
+    showEditBtn();
+    greeting();
+    logout();
+  } catch (error) {
+    alert("Error rendering page", error);
+  } finally {
+    loader.hide();
+  }
 }
 
 renderPostPage();
