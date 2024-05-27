@@ -9,6 +9,7 @@ import { getPosts } from "./utils/getPosts.mjs";
 import { showCreateLink } from "./utils/owner.mjs";
 import { greeting } from "./utils/greeting.mjs";
 import { logout } from "./utils/logout.mjs";
+import loader from "./utils/loader.mjs";
 
 const menuBtn = document.getElementById("menu-btn");
 const dropdownMenu = document.getElementById("dropdown");
@@ -182,11 +183,18 @@ async function renderPostList() {
 }
 
 async function renderPage() {
-  logout();
-  greeting();
-  renderSlider();
-  showCreateLink();
-  await renderPostList();
+  loader.display();
+  try {
+    logout();
+    greeting();
+    renderSlider();
+    showCreateLink();
+    await renderPostList();
+  } catch (error) {
+    alert("Error rendering page", error);
+  } finally {
+    loader.hide();
+  }
 }
 
 renderPage();
