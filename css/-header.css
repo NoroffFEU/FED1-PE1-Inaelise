@@ -21,6 +21,7 @@ header ul {
 }
 
 .menu-btn {
+  cursor: pointer;
   color: var(--white);
   border: none;
   background-color: var(--dark-blue);
