@@ -143,6 +143,22 @@
     width: 240px;
   }
 
+  /* About page */
+  .about-container {
+    flex-direction: row;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .about-content h2 {
+    margin: 0;
+  }
+
+  .about-content {
+    margin: 2rem 1rem;
+  }
+
   /* Edit page & Create page */
   .form input {
     width: 350px;
@@ -230,6 +246,17 @@
   .template-title {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  /* About page */
+  .about-img {
+    width: 320px;
+    height: 360px;
+  }
+
+  .img-background {
+    width: 320px;
+    height: 360px;
   }
 
   /* Blog Post Page */

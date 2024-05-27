@@ -1,0 +1,54 @@
+.about-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.about-img-container {
+  position: relative;
+}
+
+.about-img {
+  width: 220px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 76% 29% 10% 32% / 38% 35% 10% 39%;
+}
+
+.img-background {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  width: 220px;
+  height: 240px;
+  background-color: var(--grey);
+  border-radius: 76% 29% 10% 32% / 38% 35% 10% 39%;
+  transform: rotate(-37deg);
+  z-index: -1;
+}
+
+.about-content {
+  margin: 2rem 0.5rem;
+}
+
+.about-content h1 {
+  font-weight: var(--reg);
+  font-size: var(--xs);
+}
+
+.about-content h2 {
+  font-size: var(--m);
+}
+
+.about-content p {
+  font-size: var(--xxs);
+  line-height: 1.6;
+}
+
+.signup-btn {
+  margin: 2rem 0;
+}
+
+.signup-btn:hover {
+  transform: scale(1.2);
+}

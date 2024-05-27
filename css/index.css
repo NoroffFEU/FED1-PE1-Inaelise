@@ -7,6 +7,7 @@
 @import url(-create.css);
 @import url(-register.css);
 @import url(-login.css);
+@import url(-about.css);
 
 @import url(-media.css);
 
@@ -91,7 +92,9 @@ textarea {
 .login-form input[type="submit"],
 .register-form input[type="submit"],
 .create-form input[type="submit"],
-.logout-btn {
+.logout-btn,
+.signup-btn {
+  cursor: pointer;
   background-color: var(--blue);
   color: var(--white);
   width: 130px;
