@@ -178,3 +178,8 @@
 .active-page {
   border: 1px solid var(--blue);
 }
+
+.search-container {
+  display: flex;
+  justify-content: center;
+}
