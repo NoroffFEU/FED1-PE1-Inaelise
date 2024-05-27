@@ -40,8 +40,6 @@ async function renderSlider() {
   renderSlideThree(slides);
 }
 
-renderSlider();
-
 //Slider functions
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
@@ -92,38 +90,6 @@ progress.forEach((dot, dotPosition) => {
     updatePosition(dotPosition);
   });
 });
-
-/* function renderPostHtml(post) {
-  const displayContainer = document.getElementById("display-container");
-  const blogPost = document.createElement("a");
-  blogPost.href = "./post/index.html?id=" + post.id;
-  blogPost.title = "Click to view article";
-  blogPost.setAttribute("aria-label", "Link");
-  blogPost.classList.add("article-link");
-
-  const postImage = document.createElement("img");
-  postImage.classList.add("template-img");
-  postImage.src = post.media.url;
-
-  const articleContent = document.createElement("div");
-  articleContent.classList.add("article-container");
-
-  const postTitle = document.createElement("h3");
-  postTitle.classList.add("template-title");
-  postTitle.textContent = post.title;
-
-  const postBody = document.createElement("p");
-  postBody.classList.add("template-body");
-
-  // Function to shorten the body string.
-  postBody.textContent = shortenString(post.body, 90);
-
-  displayContainer.append(blogPost);
-  articleContent.append(postTitle, postBody);
-  blogPost.append(postImage, articleContent);
-
-  return blogPost;
-} */
 
 function paginate(posts, postsPerPage) {
   const totalPages = Math.ceil(posts.length / postsPerPage);
@@ -183,6 +149,21 @@ function renderPost(post, container) {
   blogPost.append(postImage, articleContent);
 }
 
+/* function searchInput(posts) {
+  const search = document.getElementById("search");
+  search.addEventListener("input", (e) => {
+    const filtered = e.target.value.toLowerCase();
+    const filteredPosts = posts.filter((post) => {
+      if (filtered === "") {
+        return true;
+      } else {
+        return post.title.toLowerCase().includes(filtered);
+      }
+    });
+    renderPosts(filteredPosts);
+  });
+} */
+
 function renderPosts(posts) {
   const displayContainer = document.getElementById("display-container");
   posts.forEach((post) => renderPost(post, displayContainer));
@@ -190,13 +171,22 @@ function renderPosts(posts) {
 
 // Renders list of posts
 async function renderPostList() {
-  const posts = await getPosts(postsUrl);
-  const paginatedPosts = paginate(posts, 12);
-  renderPosts(paginatedPosts[0]);
-  renderPagination(paginatedPosts);
+  try {
+    const posts = await getPosts(postsUrl);
+    const paginatedPosts = paginate(posts, 12);
+    renderPosts(paginatedPosts[0]);
+    renderPagination(paginatedPosts);
+  } catch (error) {
+    alert("Error fetching list of posts", error);
+  }
 }
 
-logout();
-greeting();
-renderPostList();
-showCreateLink();
+async function renderPage() {
+  logout();
+  greeting();
+  renderSlider();
+  showCreateLink();
+  await renderPostList();
+}
+
+renderPage();
