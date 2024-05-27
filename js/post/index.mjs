@@ -5,26 +5,7 @@ import { showCreateLink, showEditBtn } from "../utils/owner.mjs";
 import { greeting } from "../utils/greeting.mjs";
 import { logout } from "../utils/logout.mjs";
 import loader from "../utils/loader.mjs";
-
-const menuBtn = document.getElementById("menu-btn");
-const dropdownMenu = document.getElementById("dropdown");
-
-dropdownMenu.classList.remove("show");
-
-function toggleDropdown() {
-  dropdownMenu.classList.toggle("show");
-}
-
-menuBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  toggleDropdown();
-});
-
-document.documentElement.addEventListener("click", (e) => {
-  if (dropdownMenu.classList.contains("show")) {
-    toggleDropdown();
-  }
-});
+import { showDropdown } from "../utils/dropdown.mjs";
 
 function renderPostPageHtml(post) {
   const article = document.querySelector(".post-container");
@@ -146,6 +127,7 @@ async function renderPostPage() {
   try {
     const post = await getPosts(postUrl);
     renderPostPageHtml(post);
+    showDropdown();
     showCreateLink();
     showEditBtn();
     greeting();

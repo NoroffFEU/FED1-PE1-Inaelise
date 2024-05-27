@@ -2,27 +2,9 @@ import { header } from "../utils/fetchAuth.mjs";
 import { API_BASE_URL } from "../utils/api.mjs";
 import { greeting } from "../utils/greeting.mjs";
 import { logout } from "../utils/logout.mjs";
+import { showDropdown } from "../utils/dropdown.mjs";
 
-const menuBtn = document.getElementById("menu-btn");
-const dropdownMenu = document.getElementById("dropdown");
-
-dropdownMenu.classList.remove("show");
-
-function toggleDropdown() {
-  dropdownMenu.classList.toggle("show");
-}
-
-menuBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  toggleDropdown();
-});
-
-document.documentElement.addEventListener("click", (e) => {
-  if (dropdownMenu.classList.contains("show")) {
-    toggleDropdown();
-  }
-});
-
+showDropdown();
 greeting();
 logout();
 
