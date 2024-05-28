@@ -12,6 +12,8 @@ function renderPostPageHtml(post) {
   const info = document.querySelector(".article-info");
   const content = document.querySelector(".article-content");
 
+  document.title = `HotView Labs | ${post.title}`;
+
   const image = document.createElement("img");
   image.src = post.media.url;
   image.alt = post.media.alt;
