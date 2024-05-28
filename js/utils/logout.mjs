@@ -13,7 +13,7 @@ export function logout() {
       removeFromStorage("user");
       removeFromStorage("accessToken");
       alert("You've logged out!");
-      window.location.href = "index.html";
+      window.location.href = "./index.html";
     }
   });
 }
