@@ -8,13 +8,12 @@ export function logout() {
   if (user) {
     container.classList.remove("hidden-link");
   }
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
+  button.addEventListener("click", () => {
     if (window.confirm("Are you sure you want to logout?") === true) {
       removeFromStorage("user");
       removeFromStorage("accessToken");
       alert("You've logged out!");
-      window.location.href = "../index.html";
+      window.location.href = "index.html";
     }
   });
 }
