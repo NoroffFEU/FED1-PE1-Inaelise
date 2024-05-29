@@ -24,3 +24,11 @@
   margin-top: 3rem;
   padding-bottom: 1rem;
 }
+
+.logged-in {
+  padding: 2rem 0;
+}
+
+.logout-div {
+  padding-bottom: 5rem;
+}
