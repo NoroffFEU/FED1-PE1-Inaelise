@@ -35,3 +35,21 @@ export function logoutTwo() {
     }
   });
 }
+
+export function logoutThree() {
+  const user = loadStorage("user");
+  const button = document.getElementById("page-logout");
+  const container = document.querySelector(".logout");
+
+  if (user) {
+    container.classList.remove("hidden-link");
+  }
+  button.addEventListener("click", () => {
+    if (window.confirm("Are you sure you want to logout?") === true) {
+      removeFromStorage("user");
+      removeFromStorage("accessToken");
+      alert("You've logged out!");
+      window.location.reload();
+    }
+  });
+}
