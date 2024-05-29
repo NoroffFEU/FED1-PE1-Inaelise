@@ -43,7 +43,7 @@ function renderPostPageHtml(post) {
   edit.href = "./edit.html?id=" + post.id;
   edit.setAttribute("id", "owner-edit");
   edit.classList.add("hidden-link");
-  edit.innerHTML = `<i class="fa-solid fa-pen-to-square edit-icon" title="Click to edit post" aria-label="Edit"></i>`;
+  edit.innerHTML = `<i class="fa-solid fa-pen-to-square edit-icon" title="Click to edit post" aria-label="button"></i>`;
 
   const postTitle = document.createElement("h1");
   postTitle.textContent = post.title;
