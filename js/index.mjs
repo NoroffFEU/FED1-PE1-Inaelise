@@ -112,11 +112,12 @@ function renderPost(post, container) {
   const postImage = document.createElement("img");
   postImage.classList.add("template-img");
   postImage.src = post.media.url;
+  postImage.alt = post.media.alt;
 
   const articleContent = document.createElement("div");
   articleContent.classList.add("article-container");
 
-  const postTitle = document.createElement("h3");
+  const postTitle = document.createElement("h2");
   postTitle.classList.add("template-title");
   postTitle.textContent = post.title;
 
