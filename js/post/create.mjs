@@ -1,12 +1,12 @@
 import { header } from "../utils/fetchAuth.mjs";
 import { API_BASE_URL } from "../utils/api.mjs";
 import { greeting } from "../utils/greeting.mjs";
-import { logout } from "../utils/logout.mjs";
+import { logoutTwo } from "../utils/logout.mjs";
 import { showDropdown } from "../utils/dropdown.mjs";
 
 showDropdown();
 greeting();
-logout();
+logoutTwo();
 
 // Create form
 const createForm = {

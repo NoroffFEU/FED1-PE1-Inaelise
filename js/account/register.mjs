@@ -1,13 +1,13 @@
 import { API_BASE_URL } from "../utils/api.mjs";
 import { showDropdown } from "../utils/dropdown.mjs";
 import { greeting } from "../utils/greeting.mjs";
-import { logout } from "../utils/logout.mjs";
+import { logoutTwo } from "../utils/logout.mjs";
 import { showCreateLink } from "../utils/owner.mjs";
 
 showDropdown();
 showCreateLink();
 greeting();
-logout();
+logoutTwo();
 
 //Register form
 const registerForm = {

@@ -3,7 +3,7 @@ import { getPosts } from "../utils/getPosts.mjs";
 import { shortenString } from "../utils/shortenString.mjs";
 import { showCreateLink, showEditBtn } from "../utils/owner.mjs";
 import { greeting } from "../utils/greeting.mjs";
-import { logout } from "../utils/logout.mjs";
+import { logoutTwo } from "../utils/logout.mjs";
 import loader from "../utils/loader.mjs";
 import { showDropdown } from "../utils/dropdown.mjs";
 
@@ -133,7 +133,7 @@ async function renderPostPage() {
     showCreateLink();
     showEditBtn();
     greeting();
-    logout();
+    logoutTwo();
   } catch (error) {
     alert("Error rendering page", error);
   } finally {

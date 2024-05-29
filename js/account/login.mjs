@@ -2,13 +2,13 @@ import { API_BASE_URL } from "../utils/api.mjs";
 import { showDropdown } from "../utils/dropdown.mjs";
 import { greeting } from "../utils/greeting.mjs";
 import * as storage from "../utils/localStorage.mjs";
-import { logout } from "../utils/logout.mjs";
+import { logoutTwo } from "../utils/logout.mjs";
 import { showCreateLink } from "../utils/owner.mjs";
 
 showDropdown();
 greeting();
 showCreateLink();
-logout();
+logoutTwo();
 
 //Login form
 const loginForm = {

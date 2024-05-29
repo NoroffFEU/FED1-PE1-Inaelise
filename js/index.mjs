@@ -8,7 +8,7 @@ import {
 import { getPosts } from "./utils/getPosts.mjs";
 import { showCreateLink } from "./utils/owner.mjs";
 import { greeting } from "./utils/greeting.mjs";
-import { logout } from "./utils/logout.mjs";
+import { logoutOne } from "./utils/logout.mjs";
 import loader from "./utils/loader.mjs";
 import { showDropdown } from "./utils/dropdown.mjs";
 
@@ -167,7 +167,7 @@ async function renderPage() {
   loader.display();
   try {
     showDropdown();
-    logout();
+    logoutOne();
     greeting();
     renderSlider();
     showCreateLink();

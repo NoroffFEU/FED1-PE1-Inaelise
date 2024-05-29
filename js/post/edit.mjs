@@ -3,13 +3,13 @@ import { showDropdown } from "../utils/dropdown.mjs";
 import { header } from "../utils/fetchAuth.mjs";
 import { getPosts } from "../utils/getPosts.mjs";
 import { greeting } from "../utils/greeting.mjs";
-import { logout } from "../utils/logout.mjs";
+import { logoutTwo } from "../utils/logout.mjs";
 import { showCreateLink } from "../utils/owner.mjs";
 
 showDropdown();
 showCreateLink();
 greeting();
-logout();
+logoutTwo();
 
 //Edit form
 const editForm = {
