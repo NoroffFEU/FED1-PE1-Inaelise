@@ -20,6 +20,11 @@
     position: absolute;
     right: 0;
   }
+
+  .document-content {
+    max-width: 600px;
+    padding: 1rem 1rem;
+  }
 }
 
 @media screen and (min-width: 48.1em) {
@@ -174,6 +179,12 @@
 
   .form-btns {
     gap: 4rem;
+  }
+
+  /* Document pages */
+  .document-content {
+    max-width: 800px;
+    padding: 1rem 1.5rem;
   }
 
   /* Footer */

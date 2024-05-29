@@ -1,0 +1,19 @@
+.document-content {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 1rem 0.5rem;
+  font-size: var(--xxs);
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.date {
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.headline {
+  text-decoration: underline;
+  margin-bottom: 0;
+  margin-top: 2rem;
+}
