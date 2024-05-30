@@ -132,21 +132,6 @@ function renderPost(post, container) {
   blogPost.append(postImage, articleContent);
 }
 
-/* function searchInput(posts) {
-  const search = document.getElementById("search");
-  search.addEventListener("input", (e) => {
-    const filtered = e.target.value.toLowerCase();
-    const filteredPosts = posts.filter((post) => {
-      if (filtered === "") {
-        return true;
-      } else {
-        return post.title.toLowerCase().includes(filtered);
-      }
-    });
-    renderPosts(filteredPosts);
-  });
-} */
-
 function renderPosts(posts) {
   const displayContainer = document.getElementById("display-container");
   posts.forEach((post) => renderPost(post, displayContainer));
