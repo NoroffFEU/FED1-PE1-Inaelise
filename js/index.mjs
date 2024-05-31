@@ -73,6 +73,22 @@ progress.forEach((dot, dotPosition) => {
   });
 });
 
+/* function getMatchingPosts(searchString, posts) {
+  return posts.filter((x) => {
+    const stringified = JSON.stringify(x);
+    return stringified.toLowerCase().indexOf(searchString.toLowerCase()) >= 0;
+  });
+}
+
+function getSearchInput(posts) {
+  const searchInput = document.getElementById("search");
+  searchInput.addEventListener("change", () => {
+    const matches = getMatchingPosts(searchInput.value, posts);
+    console.log(matches);
+    return renderPosts(matches);
+  });
+} */
+
 function paginate(posts, postsPerPage) {
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const pages = [];
@@ -142,6 +158,7 @@ async function renderPostList() {
   try {
     const posts = await getPosts(postsUrl);
     const paginatedPosts = paginate(posts, 12);
+    /* getSearchInput(posts); */
     renderPosts(paginatedPosts[0]);
     renderPagination(paginatedPosts);
   } catch (error) {
