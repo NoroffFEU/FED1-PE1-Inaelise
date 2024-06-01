@@ -7,7 +7,9 @@ export function renderSlideOne(post) {
   slideOne.title = "Click to view article";
   slideOne.setAttribute("aria-label", "Link");
   slideOne.innerHTML = `
-    <img class="slider-img" src="${firstSlide.media.url}" />
+    <img class="slider-img" src="${firstSlide.media.url}" alt="${
+    firstSlide.media.alt
+  }" />
     <div class="slide-content">
       <h2 class="slider-title">${firstSlide.title}</h2>
       <p class="slider-body">${shortenString(firstSlide.body, 50)}</p>
@@ -25,7 +27,9 @@ export function renderSlideTwo(post) {
   slideTwo.title = "Click to view article";
   slideTwo.setAttribute("aria-label", "Link");
   slideTwo.innerHTML = `
-    <img class="slider-img" src="${secondSlide.media.url}" />
+    <img class="slider-img" src="${secondSlide.media.url}" alt="${
+    secondSlide.media.alt
+  }" />
     <div class="slide-content">
       <h2 class="slider-title">${secondSlide.title}</h2>
       <p class="slider-body">${shortenString(secondSlide.body, 50)}</p>
@@ -43,7 +47,9 @@ export function renderSlideThree(post) {
   slideThree.title = "Click to view article";
   slideThree.setAttribute("aria-label", "Link");
   slideThree.innerHTML = `
-    <img class="slider-img" src="${thirdSlide.media.url}" />
+    <img class="slider-img" src="${thirdSlide.media.url}" alt="${
+    thirdSlide.media.alt
+  }" />
     <div class="slide-content">
       <h2 class="slider-title">${thirdSlide.title}</h2>
       <p class="slider-body">${shortenString(thirdSlide.body, 50)}</p>
