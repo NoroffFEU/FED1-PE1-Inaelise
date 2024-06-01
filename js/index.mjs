@@ -73,6 +73,7 @@ progress.forEach((dot, dotPosition) => {
   });
 });
 
+// Functions for pagination
 function paginate(posts, postsPerPage) {
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const pages = [];
@@ -145,7 +146,7 @@ function getMatchingPosts(searchString, posts) {
     return stringified.toLowerCase().indexOf(searchString.toLowerCase()) >= 0;
   });
 }
-
+// Gets the filtered search
 function renderSearchInput(posts) {
   const searchInput = document.getElementById("search");
   searchInput.addEventListener("input", () => {
