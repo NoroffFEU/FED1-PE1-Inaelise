@@ -98,6 +98,7 @@ function renderPagination(paginatedPosts, currentPage = 0) {
       pageBtn.classList.add("active-page");
     }
     pageBtn.textContent = index + 1;
+    pageBtn.title = "Click to go to page";
     pageBtn.addEventListener("click", () => {
       displayContainer.innerHTML = "";
       renderPosts(page);
