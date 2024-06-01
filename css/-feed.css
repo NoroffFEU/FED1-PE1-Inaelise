@@ -175,6 +175,13 @@
   font-weight: var(--bold);
 }
 
+.active-page {
+  border: 3px solid var(--blue);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
 .search-container {
   display: flex;
   justify-content: center;

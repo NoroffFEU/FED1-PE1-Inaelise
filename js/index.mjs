@@ -86,7 +86,7 @@ function paginate(posts, postsPerPage) {
   return pages;
 }
 
-function renderPagination(paginatedPosts) {
+function renderPagination(paginatedPosts, currentPage = 0) {
   const pagination = document.getElementById("pagination");
   const displayContainer = document.getElementById("display-container");
   pagination.innerHTML = "";
@@ -94,10 +94,14 @@ function renderPagination(paginatedPosts) {
   paginatedPosts.forEach((page, index) => {
     const pageBtn = document.createElement("button");
     pageBtn.classList.add("page-btn");
+    if (index === currentPage) {
+      pageBtn.classList.add("active-page");
+    }
     pageBtn.textContent = index + 1;
     pageBtn.addEventListener("click", () => {
       displayContainer.innerHTML = "";
       renderPosts(page);
+      renderPagination(paginatedPosts, index);
     });
     pagination.append(pageBtn);
   });
