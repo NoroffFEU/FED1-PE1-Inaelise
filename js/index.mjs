@@ -73,22 +73,6 @@ progress.forEach((dot, dotPosition) => {
   });
 });
 
-/* function getMatchingPosts(searchString, posts) {
-  return posts.filter((x) => {
-    const stringified = JSON.stringify(x);
-    return stringified.toLowerCase().indexOf(searchString.toLowerCase()) >= 0;
-  });
-}
-
-function getSearchInput(posts) {
-  const searchInput = document.getElementById("search");
-  searchInput.addEventListener("change", () => {
-    const matches = getMatchingPosts(searchInput.value, posts);
-    console.log(matches);
-    return renderPosts(matches);
-  });
-} */
-
 function paginate(posts, postsPerPage) {
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const pages = [];
@@ -150,7 +134,26 @@ function renderPost(post, container) {
 
 function renderPosts(posts) {
   const displayContainer = document.getElementById("display-container");
+  displayContainer.innerHTML = "";
   posts.forEach((post) => renderPost(post, displayContainer));
+}
+
+// Function for search input
+function getMatchingPosts(searchString, posts) {
+  return posts.filter((x) => {
+    const stringified = JSON.stringify(x);
+    return stringified.toLowerCase().indexOf(searchString.toLowerCase()) >= 0;
+  });
+}
+
+function renderSearchInput(posts) {
+  const searchInput = document.getElementById("search");
+  searchInput.addEventListener("input", () => {
+    const matches = getMatchingPosts(searchInput.value, posts);
+    const paginatedPosts = paginate(matches, 12);
+    renderPosts(paginatedPosts[0] || []);
+    renderPagination(paginatedPosts);
+  });
 }
 
 // Renders list of posts
@@ -158,9 +161,9 @@ async function renderPostList() {
   try {
     const posts = await getPosts(postsUrl);
     const paginatedPosts = paginate(posts, 12);
-    /* getSearchInput(posts); */
     renderPosts(paginatedPosts[0]);
     renderPagination(paginatedPosts);
+    renderSearchInput(posts);
   } catch (error) {
     alert("Error fetching list of posts", error);
   }
